@@ -1,0 +1,26 @@
+.post {
+    background-color: #fff; /* Light background */
+    border-radius: 8px; /* Rounded corners */
+    margin-bottom: 2rem; /* Spacing between posts */
+    overflow: hidden; /* Clip content within the card */
+    width: 100%; /* Take up full width */
+    transition: box-shadow 0.3s ease; /* Smooth transition for box-shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Initial shadow */
+    padding: 1.5rem; /* Add padding */
+}
+
+.post:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+}
+
+.post__title {
+    margin: 0 0 1rem; /* Adjust margins for spacing */
+    font-size: 1.5rem; /* Adjust font size */
+    font-weight: bold; /* Bold title */
+}
+
+.post__text {
+    font-size: 1.1rem; /* Adjust content font size */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Darker text for better contrast */
+}

@@ -1,0 +1,50 @@
+/* Navbar.css */
+
+.Nav {
+  background-color: #4267B2; /* Facebook Blue */
+  border-bottom: 1px solid #29487d;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.logo p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-left: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #dfe3ee;
+}
+
+.menu p {
+  margin: 0;
+}

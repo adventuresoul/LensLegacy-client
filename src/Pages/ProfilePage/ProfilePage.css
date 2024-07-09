@@ -1,0 +1,66 @@
+/* ProfilePage.css */
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 40px auto; /* Center the container */
+}
+
+.profile-photo img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #4267B2; /* Facebook Blue */
+  margin-bottom: 20px;
+}
+
+.profile-info {
+  text-align: center;
+}
+
+.profile-info h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.profile-info p {
+  font-size: 1rem;
+  color: #777;
+  margin: 5px 0 20px 0;
+}
+
+.profile-links {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 0;
+}
+
+.profile-link a,
+.profile-link button {
+  text-decoration: none;
+  color: #4267B2; /* Facebook Blue */
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 1px solid #4267B2;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.profile-link a:hover,
+.profile-link button:hover {
+  background-color: #4267B2;
+  color: #ffffff;
+}
