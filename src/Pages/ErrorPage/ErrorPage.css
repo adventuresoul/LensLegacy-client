@@ -1,0 +1,41 @@
+/* ErrorPage.css */
+
+.error-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #f0f2f5;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.home-link {
+    font-size: 1rem;
+    color: #4267B2; /* Facebook Blue */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 1px solid #4267B2;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.home-link:hover {
+    background-color: #4267B2;
+    color: #ffffff;
+}

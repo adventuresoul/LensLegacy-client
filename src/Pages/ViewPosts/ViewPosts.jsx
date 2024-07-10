@@ -41,13 +41,14 @@ function ViewPosts() {
                 posts.map((post) => (
                     <Post
                         key={post._id}
+                        user={post.userId}
                         imageLink={post.imageLink}
                         category={post.category}
                         title={post.title}
                         description={post.description}
                     />
                 ))
-            ) : (
+            ): (
                 <p>No posts available.</p>
             )}
         </div>

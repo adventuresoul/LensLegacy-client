@@ -1,76 +1,82 @@
 /* SignupPage.css */
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f2f5; /* Light Facebook background */
-    margin: 0;
-    padding: 0;
-  }
-  
-  .signup-container-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: calc(100vh - 60px); /* Full height minus navbar height */
-  }
-  
-  .signup-container {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-  }
-  
-  form {
-    background-color: #ffffff;
-    padding: 20px 40px;
-    border: 1px solid #d3d3d3;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100%;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #4267B2; /* Facebook Blue */
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    width: 100%;
-    padding: 10px;
-    background-color: #4267B2; /* Facebook Blue */
-    border: none;
-    border-radius: 4px;
-    color: #ffffff;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #365899;
-  }
-  
-  .link-container {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .login-link {
-    color: #4267B2; /* Facebook Blue */
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .login-link:hover {
-    text-decoration: underline;
-  }
-  
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5; /* Light Facebook background */
+  margin: 0;
+  padding: 0;
+}
+
+.signup-container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* Full height minus navbar height */
+  padding-top: 60px; /* Add padding equal to navbar height */
+}
+
+.signup-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border: 1px solid #d3d3d3;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #4267B2; /* Facebook Blue */
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4267B2; /* Facebook Blue */
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #365899;
+}
+
+.link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-link {
+  color: #4267B2; /* Facebook Blue */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  color: rgb(255, 255, 255);
+}

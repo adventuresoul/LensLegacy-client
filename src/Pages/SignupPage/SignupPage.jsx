@@ -8,6 +8,8 @@ function SignupPage() {
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
+    const [profilePhotoUrl, setProfilePhotoUrl] = useState("");
+    const [instagramUsername, setInstagramUsername] = useState("");
     const [errors, setErrors] = useState({});
 
     const navigate = useNavigate();
@@ -45,7 +47,9 @@ function SignupPage() {
             username,
             email,
             phone,
-            password
+            instagramUsername,
+            password,
+            profilePhotoUrl
         };
 
         try {
@@ -78,8 +82,14 @@ function SignupPage() {
                     <input type="text" name="phone" id="phone" value={phone} onChange={(e) => setPhone(e.target.value)} />
                     {errors.phone && <p>{errors.phone}</p>}
                     <br />
+                    <label htmlFor="instagramUsername">instagram Username:</label>
+                    <input type="test" name="instagramUsername" id="instagramUsername" value={instagramUsername} onChange={(e) => setInstagramUsername(e.target.value)} />
+                    <br />
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                    <br />
+                    <label htmlFor="profilePhotoUrl">Profile Photo Link:</label>
+                    <input type="text" name="profilePhotoUrl" id="profilePhotoUrl" value={profilePhotoUrl} onChange={(e) => setProfilePhotoUrl(e.target.value)} />
                     <br />
                     <button type="submit">Register</button>
                 </form>
