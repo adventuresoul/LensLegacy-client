@@ -35,12 +35,13 @@ function LoginPage() {
                 
                 // Redirect to home or prev route
                 navigate(prevRoute);
-            } else {
+            } 
+            else {
                 alert("Login failed: " + response.statusText);
             }
         } catch (error) {
             console.error('Error: ' + error.message);
-            alert('Login failed. Please try again later.');
+            alert('Login failed. Please try again later or login with correct credentials.');
         }
     };
 
@@ -57,7 +58,7 @@ function LoginPage() {
                     <button type="submit">Login</button>
                 </form>
                 <div className="link-container">
-                    <p>Don't have an account? <Link to="/signup" className="signup-link">Sign Up</Link></p>
+                    <h5>Don't have an account? <Link to="/signup" className="signup-link">Sign Up</Link></h5>
                 </div>
             </div>
         </div>

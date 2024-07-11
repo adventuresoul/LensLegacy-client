@@ -75,6 +75,7 @@ function NewPost() {
     return (
         <div className="newpost-container-wrapper">
             <div className="newpost-container">
+                <h1>New post</h1>
                 <form onSubmit={uploadPost}>
                     <label htmlFor="title">Title:</label>
                     <input type="text" name="title" id="title" value={title} onChange={handleChange} required />

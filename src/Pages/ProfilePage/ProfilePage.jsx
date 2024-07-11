@@ -11,10 +11,10 @@ function ProfilePage() {
     username: '',
     email: '',
     phone: '',
-    profilePhotoUrl: ''
+    profilePhotoUrl: '',
+    instagramUsername: ''
   });
 
-  // useEffect hook to get token after page is mounted
   useEffect(() => {
     const storedToken = Cookies.get('token');
     if (storedToken) {
@@ -23,10 +23,8 @@ function ProfilePage() {
     } else {
       navigate('/login');
     }
-  }, []); // Empty dependency array ensures this effect runs once on mount
+  }, []);
 
-
-  // function to fetch present user info
   const getProfile = async (token) => {
     try {
       const response = await axios.get('http://127.0.0.1:9000/users/me', {
@@ -35,66 +33,77 @@ function ProfilePage() {
         }
       });
       setUserProfile({
-        username: response.data.name,
+        username: response.data.username,
         email: response.data.email,
         phone: response.data.phone,
-        profilePhotoUrl: response.data.profilePhotoUrl
+        profilePhotoUrl: response.data.profilePhotoUrl,
+        instagramUsername: response.data.instagramUsername
       });
-    } 
-    catch (error) {
-      console.error('Error: ' + error.message);
-      alert('Please try again later.');
+    } catch (error) {
+      console.error('Error fetching profile:', error.message);
+      alert('Error fetching profile. Please try again later.');
     }
   };
 
-  // function to logout
   const logout = () => {
     setToken(null);
     Cookies.remove('token', { path: '/' });
     navigate('/login');
   };
 
-
-  // function to naviaget to new post upload page
   const uploadPost = () => {
     navigate('/newPost');
   };
 
-  // function to navigate to myPosts page
   const viewPosts = () => {
     navigate('/myPosts');
+  };
+
+  const deleteMe = async () => {
+    try {
+      await axios.delete('http://127.0.0.1:9000/users', {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
+      });
+      navigate('/signup');
+    } catch (error) {
+      console.error('Error deleting profile:', error.message);
+      alert('Error deleting profile. Please try again later.');
+    }
+  };
+
+  if (!token) {
+    return null;
   }
 
-  // conditional rendering based on token var 
-  if (!token) {
-    return null; // Render nothing if no token is present
-  }
-  else{
-    return (
-      <div className="profile-container">
-        <div className="profile-photo">
-          <img src={userProfile.profilePhotoUrl} alt="Profile" />
+  return (
+    <div className="profile-container">
+      <div className="profile-photo">
+        <img src={userProfile.profilePhotoUrl} alt="Profile" />
+      </div>
+      <div className="profile-info">
+        <h1>{userProfile.username}</h1>
+        <p>{userProfile.email}</p>
+        <p>Contact: {userProfile.phone}</p>
+        <p>Instagram: {userProfile.instagramUsername}</p>
+      </div>
+      <div className="profile-links">
+        <div className="profile-link">
+          <button onClick={viewPosts}>My Posts</button>
         </div>
-        <div className="profile-info">
-          <h1>{userProfile.username}</h1>
-          <p>{userProfile.email}</p>
-          <p>contact:{userProfile.phone}</p>
-          <p>Instagram:{userProfile.instagramUsername}</p>
+        <div className="profile-link">
+          <button onClick={uploadPost}>New Post</button>
         </div>
-        <div className="profile-links">
-          <div className="profile-link">
-            <button onClick={viewPosts}>View Posts</button>
-          </div>
-          <div className="profile-link">
-            <button onClick={uploadPost}>New Post</button>
-          </div>
-          <div className="profile-link">
-            <button onClick={logout}>Logout</button>
-          </div>
+        <div className="profile-link">
+          <button onClick={logout}>Logout</button>
+        </div>
+        <div className="profile-link">
+          <button onClick={deleteMe}>Delete Profile</button>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default ProfilePage;

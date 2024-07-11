@@ -83,7 +83,7 @@ function SignupPage() {
                     {errors.phone && <p>{errors.phone}</p>}
                     <br />
                     <label htmlFor="instagramUsername">instagram Username:</label>
-                    <input type="test" name="instagramUsername" id="instagramUsername" value={instagramUsername} onChange={(e) => setInstagramUsername(e.target.value)} />
+                    <input type="text" name="instagramUsername" id="instagramUsername" value={instagramUsername} onChange={(e) => setInstagramUsername(e.target.value)} />
                     <br />
                     <label htmlFor="password">Password:</label>
                     <input type="password" name="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
@@ -94,7 +94,7 @@ function SignupPage() {
                     <button type="submit">Register</button>
                 </form>
                 <div className="link-container">
-                    <p>Already have an account? <Link to="/login" className="login-link">Log In</Link></p>
+                    <h5>Already have an account? <Link to="/login" className="login-link">Log In</Link></h5>
                 </div>
             </div>
         </div>

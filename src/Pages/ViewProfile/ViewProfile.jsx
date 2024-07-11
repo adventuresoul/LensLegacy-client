@@ -12,6 +12,7 @@ function ViewProfile() {
         username: '',
         email: '',
         phone: '',
+        instagramUsername: '',
         profilePhotoUrl: ''
     });
     const [posts, setPosts] = useState([]);
@@ -36,9 +37,10 @@ function ViewProfile() {
                 }
             }); 
             setUserProfile({
-                username: profileResponse.data.name,
+                username: profileResponse.data.username,
                 email: profileResponse.data.email,
                 phone: profileResponse.data.phone,
+                instagramUsername: profileResponse.data.instagramUsername,
                 profilePhotoUrl: profileResponse.data.profilePhotoUrl
             });
         } catch (error) {
@@ -61,20 +63,6 @@ function ViewProfile() {
         }
     };
 
-    const viewPosts = () => {
-        // Define this function to navigate to the posts view if needed
-    };
-
-    const uploadPost = () => {
-        // Define this function to handle new post uploads
-    };
-
-    const logout = () => {
-        // Define this function to handle user logout
-        Cookies.remove('token');
-        navigate('/login');
-    };
-
     return (
         <>
             <div className="profile-container">
@@ -85,17 +73,6 @@ function ViewProfile() {
                     <h1>{userProfile.username}</h1>
                     <p>{userProfile.email}</p>
                     <p>Contact: {userProfile.phone}</p>
-                </div>
-                <div className="profile-links">
-                    <div className="profile-link">
-                        <button onClick={viewPosts}>View Posts</button>
-                    </div>
-                    <div className="profile-link">
-                        <button onClick={uploadPost}>New Post</button>
-                    </div>
-                    <div className="profile-link">
-                        <button onClick={logout}>Logout</button>
-                    </div>
                 </div>
             </div>
 

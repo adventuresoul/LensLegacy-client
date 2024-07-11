@@ -36,10 +36,11 @@ function HomePage() {
     };
 
     return (
-        <div className="viewposts-container">
-            <div className='heading'>
+        <>
+        <div className='heading'>
                 <h1>Welcome to Lens-Legacy</h1>
             </div>
+        <div className="viewposts-container">
             <div className="posts-container">
                 {posts.length > 0 ? (
                     posts.map((post) => (
@@ -53,10 +54,11 @@ function HomePage() {
                         />
                     ))
                 ) : (
-                    <p>No posts available.</p>
+                    <h4>No posts available.</h4>
                 )}
             </div>
         </div>
+        </>
     );
     
 }

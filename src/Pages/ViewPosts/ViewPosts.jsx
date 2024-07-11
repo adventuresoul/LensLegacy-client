@@ -35,23 +35,46 @@ function ViewPosts() {
         }
     };
 
+    const deletePost = async (postId) => {
+        try {
+            await axios.delete(`http://127.0.0.1:9000/posts/${postId}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setPosts(posts.filter(post => post._id !== postId));
+        } 
+        catch (error) {
+            console.error('Error deleting post:', error.message);
+            alert('Error deleting post. Please try again later.');
+        }
+    };
+
     return (
+        <>
+        <div className='viewposts-container'>
+            <h1>My posts</h1>
+        </div>
         <div className="viewposts-container">
             {posts.length > 0 ? (
                 posts.map((post) => (
-                    <Post
-                        key={post._id}
-                        user={post.userId}
-                        imageLink={post.imageLink}
-                        category={post.category}
-                        title={post.title}
-                        description={post.description}
-                    />
+                    <div key={post._id} className="post-container">
+                        <Post
+                            user={post.userId}
+                            imageLink={post.imageLink}
+                            category={post.category}
+                            title={post.title}
+                            description={post.description}
+                        />
+                        <button className="delete-button" onClick={() => deletePost(post._id)}>Delete</button>
+                    </div>
                 ))
-            ): (
-                <p>No posts available.</p>
+            ) : (
+                <h4>No posts available.</h4>
             )}
         </div>
+        </>
+        
     );
 }
 
